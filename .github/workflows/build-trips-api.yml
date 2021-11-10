@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults: 
       run:
-        working-directory: apis/trips
+        #working-directory: apis/trips
     steps:
     - uses: actions/checkout@v2
 
