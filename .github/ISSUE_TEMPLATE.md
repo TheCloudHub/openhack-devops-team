@@ -1,8 +1,9 @@
-<!--
-IF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE MIGHT BE CLOSED WITHOUT FURTHER CONSIDERATION OR INVESTIGATION
--->
-> Please provide us with the following information:
-> ---------------------------------------------------------------
+---
+title: Someone just pushed
+assignees: emaema1
+labels: bug, enhancement
+---
+
 
 ### This issue is for a: (mark with an `x`)
 ```
@@ -11,6 +12,8 @@ IF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE M
 - [ ] documentation issue or request
 - [ ] regression (a behavior that used to work and stopped in a new release)
 ```
+Someone just pushed, here's who did it: {{ payload.sender.login }}.
+
 
 ### Minimal steps to reproduce
 >
@@ -28,6 +31,3 @@ IF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE M
 >
 
 ### Mention any other details that might be useful
-
-> ---------------------------------------------------------------
-> Thanks! We'll be in touch soon.
