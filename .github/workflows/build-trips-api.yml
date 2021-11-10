@@ -2,9 +2,9 @@ name: build-trips-api
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'apis/trips/*'
+#  push:
+#    paths:
+#      - 'apis/trips/*'
   pull_request:
     branches: [ main ]
     paths:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults: 
       run:
-        working-directory: apis/trip
+        working-directory: apis/trips
     steps:
     - uses: actions/checkout@v2
 
