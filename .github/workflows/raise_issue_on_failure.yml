@@ -13,16 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
-    - name: Create Issue Action
-      # You may pin to the exact commit or the version.
-      # uses: nashmaniac/create-issue-action@b0c9250ca328a30c2989c7358bc4833f77953af2
-      uses: nashmaniac/create-issue-action@v1.1
-      with:
-        # Title of the issue
-        title: Build failed
-        # Token of the user that creates the issue
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        # Assignees of the issue
-        #assignees: # 
-        # Body of the issue
-        body: Raise an issue when build fails
+      - uses: actions/checkout@v2
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
