@@ -1,6 +1,7 @@
 name: build-trips-api
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'apis/trips/*'
