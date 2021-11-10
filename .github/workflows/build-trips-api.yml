@@ -1,16 +1,20 @@
 name: build-trips-api
 
 on:
+  push:
+    paths:
+      - 'apis/trips/*'
   pull_request:
     branches: [ main ]
-
+    paths:
+      - 'apis/trips/*'
 jobs:
 
   build:
     runs-on: ubuntu-latest
     defaults: 
       run:
-        #working-directory: apis/trips
+        working-directory: apis/trips
     steps:
     - uses: actions/checkout@v2
 
