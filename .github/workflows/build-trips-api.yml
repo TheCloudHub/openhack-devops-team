@@ -1,9 +1,13 @@
 name: build-trips-api
 
 on:
+  push:
+    paths:
+      - 'apis/trips/*'
   pull_request:
     branches: [ main ]
-
+    paths:
+      - 'apis/trips/*'
 jobs:
 
   build:
