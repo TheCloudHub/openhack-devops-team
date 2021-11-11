@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Build and Push Trips API
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
 
 
 jobs:
-  build:
+  docker-build-deploy:
     runs-on: ubuntu-latest
     defaults: 
       run:
