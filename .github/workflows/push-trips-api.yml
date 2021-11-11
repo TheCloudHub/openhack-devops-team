@@ -43,6 +43,7 @@ jobs:
           
     - uses: azure/webapps-deploy@v2
       with:
+        slot-name: 'staging' 
         app-name: 'openhackmix2x3l6trips'
         images: 'openhackmix2x3l6acr.azurecr.io/devopsoh/api-trips:1.${{ github.run_number }}'
     
