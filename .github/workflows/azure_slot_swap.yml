@@ -20,4 +20,5 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
+          az account set
           az webapp deployment slot swap -g openhackmix2x3l6rg -n openhackmix2x3l6trips --slot openhackmix2x3l6trips-staging --target-slot openhackmix2x3l6trips
