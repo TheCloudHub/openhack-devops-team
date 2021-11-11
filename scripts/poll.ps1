@@ -44,5 +44,8 @@ while($true) {
     $output = '{0} | {1}' -f($timestamp, $R.StatusCode)
   }
   Write-Output $output
+  if($R.StatusCode == 200){
+    exit 0;
+  }
   Start-Sleep -Seconds 1
 }

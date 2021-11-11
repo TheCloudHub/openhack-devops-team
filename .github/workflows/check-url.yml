@@ -10,4 +10,5 @@ jobs:
         uses: actions/checkout@v2
       - run: |
           ./scripts/poll.ps1
-        shell: pwsh 
+        shell: pwsh
+        timeout-minutes: 1
