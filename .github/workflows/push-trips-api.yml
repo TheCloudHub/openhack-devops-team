@@ -30,7 +30,5 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: user/app:latest
+        tags: devopsoh/api-trips:${{ github.run_id }}
     
-  # - name: Build the Docker image
-  #  run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
