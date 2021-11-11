@@ -31,5 +31,5 @@ jobs:
       with:
         context: apis/trips
         push: true
-        tags: devopsoh/api-trips:${{ github.run_id }}
+        tags: openhackmix2x3l6acr.azurecr.io/devopsoh/api-trips:${{ github.run_id }}
     
