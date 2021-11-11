@@ -53,6 +53,14 @@ jobs:
           ./scripts/poll.ps1
       shell: pwsh
       timeout-minutes: 1
+      
+    - name: Azure slot swap from staging to production
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az account set --subscription d747eb54-3608-46ed-909a-00ea74f0fa3b
+          az webapp deployment slot swap -g openhackmix2x3l6rg -n openhackmix2x3l6trips --slot staging --target-slot production
     
     - name: Azure logout
       run: |
