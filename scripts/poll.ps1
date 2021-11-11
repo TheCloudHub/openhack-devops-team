@@ -31,17 +31,31 @@ PS > .\polling.ps1 -Uri https://github.com/Azure-Samples/openhack-devops-proctor
 #     [boolean] [Parameter(Mandatory=$false)] $displayUri
 #     )
 
-$Uri = "https://openhackmix2x3l6trips.azurewebsites.net/api/healthcheck/trip"
+$Uri = "https://openhackmix2x3l6trips-staging.azurewebsites.net/api/healthcheck/trips"
 
 while($true) {
-  $R = Invoke-WebRequest -URI $Uri
+  try{
+    
+    $R = Invoke-WebRequest -URI $Uri
+    $statusCode= $R.StatusCode
+  }
+  catch{
+    $statusCode = "fail"
+    
+  }
+# {
+#   finally {<statement list>}
+# }
+  
+
+  # $R = Invoke-WebRequest -URI $Uri
   $timestamp = Get-Date
   $output = ""
   if ($displayUri) {
-    $output = $output = '{0} | {1} | {2}' -f($timestamp, $R.StatusCode, $Uri)
+    $output = $output = '{0} | {1} | {2}' -f($timestamp, $statusCode, $Uri)
   } else {
 
-    $output = '{0} | {1}' -f($timestamp, $R.StatusCode)
+    $output = '{0} | {1}' -f($timestamp, $statusCode)
   }
   Write-Output $output
   if($R.StatusCode -eq 200){
