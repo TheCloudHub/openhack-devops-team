@@ -6,6 +6,7 @@ on:
     branches: [ main ]
     paths:
       - 'apis/trips/**'
+      - '.github/workflows/push-trips-api.yml'
 
 
 jobs:
