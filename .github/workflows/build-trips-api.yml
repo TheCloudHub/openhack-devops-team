@@ -32,3 +32,30 @@ jobs:
       
     - name: Test
       run: go test -v ./tripsgo -run Unit
+
+    # checkout the repo
+    - name: 'Checkout GitHub Action' 
+      uses: actions/checkout@main
+    
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: openhackmix2x3l6acr.azurecr.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+    - run: |
+        docker build . -t openhackmix2x3l6acr.azurecr.io/devopsoh/api-trips:${{ github.sha }}
+        docker push openhackmix2x3l6acr.azurecr.io/devopsoh/api-trips:${{ github.sha }}     
+      
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'openhackmix2x3l6trips'
+        images: 'openhackmix2x3l6acr.azurecr.io/devopsoh/api-trips:${{ github.sha }}'
+    
+    - name: Azure logout
+      run: |
+        az logout
