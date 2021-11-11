@@ -12,7 +12,7 @@ var healthRouteTests = []APITestCase{
 		Method:           "GET",
 		URL:              "/api/healthcheck/trips",
 		Status:           200,
-		ExpectedResponse: `{"message": "Trip Service Healthcheck v4","status": "Healthy"}`,
+		ExpectedResponse: `{"message": "Trip Service Healthcheck v5","status": "Healthy"}`,
 	},
 }
 

@@ -1,0 +1,14 @@
+name: Run PowerShell Scripts 
+on: push
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo        
+        uses: actions/checkout@v2
+      - run: |
+          ./scripts/poll.ps1
+        shell: pwsh
+        timeout-minutes: 1
