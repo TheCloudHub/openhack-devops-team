@@ -1,8 +1,11 @@
 name: Docker Image CI
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ emaema1-patch-2 ]
+    branches: [ main ]
+    paths:
+      - 'apis/trips/*'
 
 
 jobs:
