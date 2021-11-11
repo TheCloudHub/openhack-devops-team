@@ -22,4 +22,4 @@ jobs:
         inlineScript: |
           az login
           az account set --subscription d747eb54-3608-46ed-909a-00ea74f0fa3b
-          az webapp deployment slot swap -g openhackmix2x3l6rg -n openhackmix2x3l6trips --slot production --target-slot staging
+          az webapp deployment slot swap -g openhackmix2x3l6rg -n openhackmix2x3l6trips --slot staging --target-slot production
