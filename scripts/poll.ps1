@@ -31,7 +31,7 @@ PS > .\polling.ps1 -Uri https://github.com/Azure-Samples/openhack-devops-proctor
 #     [boolean] [Parameter(Mandatory=$false)] $displayUri
 #     )
 
-$Uri = "https://openhackmix2x3l6trips.azurewebsites.net/api/healthcheck/trips"
+$Uri = "https://openhackmix2x3l6trips.azurewebsites.net/api/healthcheck/trip"
 
 while($true) {
   $R = Invoke-WebRequest -URI $Uri
