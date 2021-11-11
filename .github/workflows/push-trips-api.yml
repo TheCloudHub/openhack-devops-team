@@ -47,7 +47,15 @@ jobs:
         slot-name: 'staging' 
         app-name: 'openhackmix2x3l6trips'
         images: 'openhackmix2x3l6acr.azurecr.io/devopsoh/api-trips:1.${{ github.run_number }}'
+
+    - name: Implement health check
+      run: |
+          ./scripts/poll.ps1
+      shell: pwsh
+      timeout-minutes: 1
     
     - name: Azure logout
       run: |
         az logout
+
+    
