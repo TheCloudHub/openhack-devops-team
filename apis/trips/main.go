@@ -22,7 +22,7 @@ func getEnv(key, fallback string) string {
 	return fallback
 }
 
-func main() {
+func main123
 
 	var debug, present = os.LookupEnv("DEBUG_LOGGING")
 
